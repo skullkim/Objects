@@ -6,13 +6,7 @@ public class Audience {
 		this.bag = bag;
 	}
 
-	/*
-	public Bag getBag() {
-		return bag;
-	}
-    */
-
-	//
+	/* Bag 클래스의 hold 메서드로 이동
 	public Long buy(Ticket ticket) {
 		if (bag.hasInvitation()) {
 			bag.setTicket(ticket);
@@ -22,6 +16,12 @@ public class Audience {
 			bag.minusAmount(ticket.getFee());
 			return ticket.getFee();
 		}
+	}
+	*/
+
+	//
+	public Long buy(Ticket ticket) {
+		return bag.hold(ticket);
 	}
 	//
 }

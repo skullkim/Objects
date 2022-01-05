@@ -30,15 +30,15 @@ public class Screening {
 			audienceCount);
 	}
 
-	public Movie getMovie() {
-		return movie;
+	public Money getMovieFee() {
+		return movie.getFee();
 	}
 
 	public boolean isSequence(int sequence) {
 		return this.sequence == sequence;
 	}
 
-	public LocalDateTime getWhenScreened() {
+	public LocalDateTime getStartTime() {
 		return whenScreened;
 	}
 }

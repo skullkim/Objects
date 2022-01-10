@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.time.Duration;
 
 /** 영화 정보를 담는다 */

@@ -16,13 +16,14 @@ public class Event {
 		if (from.getDayOfWeek() != schedule.getDayOfWeek()
 				|| !from.toLocalTime().equals(schedule.getFrom())
 				|| !duration.equals(schedule.getDuration())) {
-			reschedule(schedule);
+			// reschedule 호출 부분 삭제
 			return false;
 		}
 		return true;
 	}
 
-	private void reschedule(RecurringSchedule schedule) {
+	// private 에서 public 으로 변경
+	public void reschedule(RecurringSchedule schedule) {
 		from = LocalDateTime.of(from.toLocalDate()
 			.plusDays(daysDistance(schedule)), schedule.getFrom());
 		duration = schedule.getDuration();

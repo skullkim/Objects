@@ -8,10 +8,7 @@ public class DataInputValidation {
 	private static final int PROPER_NUMBER_LENGTH = 3;
 
 	public boolean isValidNumber(final String selectedData) {
-		if (!Pattern.matches(NUMBER_PATTERN, selectedData)) {
-			throw new IllegalArgumentException(
-				GameMessage.getInputInvolvesCharacterError(selectedData));
-		}
+		doesDataContainCharacter(selectedData);
 		if(selectedData.length() != PROPER_NUMBER_LENGTH) {
 			throw new IllegalArgumentException(
 				GameMessage.getNumberLengthError(selectedData));
@@ -20,10 +17,7 @@ public class DataInputValidation {
 	}
 
 	public GameCondition isValidGameCondition(final String selectedGameCondition) {
-		if (!Pattern.matches(NUMBER_PATTERN, selectedGameCondition)) {
-			throw new IllegalArgumentException(
-				GameMessage.getInputInvolvesCharacterError(selectedGameCondition));
-		}
+		doesDataContainCharacter(selectedGameCondition);
 		final GameCondition gameCondition = GameCondition.getMatchedCondition(
 			Integer.parseInt(selectedGameCondition));
 		if (!GameCondition.isValidGameCondition(gameCondition)) {
@@ -31,5 +25,12 @@ public class DataInputValidation {
 				GameMessage.getInvalidGameConditionError(selectedGameCondition));
 		}
 		return gameCondition;
+	}
+
+	private void doesDataContainCharacter(final String selectedData) {
+		if (!Pattern.matches(NUMBER_PATTERN, selectedData)) {
+			throw new IllegalArgumentException(
+				GameMessage.getInputInvolvesCharacterError(selectedData));
+		}
 	}
 }

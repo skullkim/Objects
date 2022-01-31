@@ -5,7 +5,7 @@ import baseball.utils.GameCondition;
 import baseball.views.DataInput;
 
 public class HumanPlayer implements Player {
-	private int selectedNumber;
+	private String selectedNumber;
 	private final DataInputValidation validation;
 	private final DataInput input;
 
@@ -18,11 +18,11 @@ public class HumanPlayer implements Player {
 	public void selectValidNumber() {
 		final String selectedData = input.selectNumber();
 		validation.isValidNumber(selectedData);
-		selectedNumber = Integer.parseInt(selectedData);
+		selectedNumber = selectedData;
 	}
 
 	@Override
-	public int getSelectedNumber() {
+	public String getSelectedNumber() {
 		return this.selectedNumber;
 	}
 

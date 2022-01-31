@@ -4,7 +4,7 @@ import baseball.utils.GameCondition;
 
 public interface Player {
 	void selectValidNumber();
-	int getSelectedNumber();
+	String getSelectedNumber();
 	default GameCondition selectGameCondition(){
 		return GameCondition.INVALID_CONDITION;
 	}

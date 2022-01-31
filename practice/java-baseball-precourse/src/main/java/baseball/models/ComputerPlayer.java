@@ -3,7 +3,7 @@ package baseball.models;
 import baseball.utils.RandomNumber;
 
 public class ComputerPlayer implements Player {
-	private int selectedNumber;
+	private String selectedNumber;
 	private final RandomNumber randomNumber;
 
 	public ComputerPlayer(RandomNumber randomNumber) {
@@ -12,11 +12,12 @@ public class ComputerPlayer implements Player {
 
 	@Override
 	public void selectValidNumber() {
-		selectedNumber = randomNumber.makeThreeDigitRandomNumber();
+		selectedNumber = Integer.toString(randomNumber
+			.makeThreeDigitRandomNumber());
 	}
 
 	@Override
-	public int getSelectedNumber() {
+	public String getSelectedNumber() {
 		return selectedNumber;
 	}
 }

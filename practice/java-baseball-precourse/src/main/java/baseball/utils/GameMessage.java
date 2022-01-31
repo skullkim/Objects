@@ -10,6 +10,8 @@ public class GameMessage {
 
 	private static final String INPUT_INVOLVES_CHARACTER = ", 숫자만 입력해야 합니다";
 
+	private static final String INVALID_GAME_CONDITION = ", 게임 컨디션은 1(새로 시작) 또는 2(종료)여야 합니다";
+
 	public static void printSelectNumber() {
 		System.out.print(NumberSelection);
 	}
@@ -24,5 +26,9 @@ public class GameMessage {
 
 	public static String getInputInvolvesCharacterError(final String inputtedData) {
 		return inputtedData + INPUT_INVOLVES_CHARACTER;
+	}
+
+	public static String getInvalidGameConditionError(final String invalidGameCondition) {
+		return invalidGameCondition + INVALID_GAME_CONDITION;
 	}
 }

@@ -18,4 +18,18 @@ public class DataInputValidation {
 		}
 		return true;
 	}
+
+	public GameCondition isValidGameCondition(final String selectedGameCondition) {
+		if (!Pattern.matches(NUMBER_PATTERN, selectedGameCondition)) {
+			throw new IllegalArgumentException(
+				GameMessage.getInputInvolvesCharacterError(selectedGameCondition));
+		}
+		final GameCondition gameCondition = GameCondition.getMatchedCondition(
+			Integer.parseInt(selectedGameCondition));
+		if (!GameCondition.isValidGameCondition(gameCondition)) {
+			throw new IllegalArgumentException(
+				GameMessage.getInvalidGameConditionError(selectedGameCondition));
+		}
+		return gameCondition;
+	}
 }

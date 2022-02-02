@@ -41,7 +41,7 @@ public class GameMessage {
 
 	public static String getBallsResult(final int balls) {
 		if (balls >= 1) {
-			return BALL + balls;
+			return balls + BALL;
 		}
 		return "";
 	}
@@ -49,9 +49,9 @@ public class GameMessage {
 	public static String getStrikesResult(final int strikes, final int balls) {
 		if(strikes >= 1) {
 			if(balls >= 1) {
-				return " " + STRIKE + strikes;
+				return " " + strikes + STRIKE ;
 			}
-			return STRIKE + strikes;
+			return strikes + STRIKE;
 		}
 		return "";
 	}

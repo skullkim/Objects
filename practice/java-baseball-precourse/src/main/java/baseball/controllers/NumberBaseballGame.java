@@ -70,7 +70,11 @@ public class NumberBaseballGame {
 	}
 
 	private String makeOutputString(final int balls, final int strikes) {
-		return GameMessage.getBallsResult(balls) +
+		String result = GameMessage.getBallsResult(balls) +
 			GameMessage.getStrikesResult(strikes, balls);
+		if (result.isEmpty()) {
+			return GameMessage.getNoMatchedNumber();
+		}
+		return result;
 	}
 }

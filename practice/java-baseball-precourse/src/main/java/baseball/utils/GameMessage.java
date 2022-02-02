@@ -18,6 +18,8 @@ public class GameMessage {
 
 	private static final String STRIKE = "스트라이크";
 
+	private static final String NOTHING = "낫싱";
+
 	public static void printSelectNumber() {
 		System.out.print(NumberSelection);
 	}
@@ -54,5 +56,9 @@ public class GameMessage {
 			return strikes + STRIKE;
 		}
 		return "";
+	}
+
+	public static String getNoMatchedNumber() {
+		return NOTHING;
 	}
 }
